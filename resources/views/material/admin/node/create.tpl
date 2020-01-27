@@ -22,7 +22,7 @@
                                 <div class="form-group form-group-label">
                                     <label class="floating-label" for="server">节点地址</label>
                                     <input class="form-control maxwidth-edit" id="server" type="text" name="server">
-                                    <p class="form-control-guide"><i class="material-icons">info</i>如果填写为域名，“节点IP”会自动设置为解析的IP,出入口与端口偏移节点地址格式：www.google.com;server=www.baidu.com|prot=80#10080
+                                    <p class="form-control-guide"><i class="material-icons">info</i>如果填写为域名，“节点IP”会自动设置为解析的IP,出入口与端口偏移节点地址格式：www.google.com;server=www.baidu.com|port=80#10080
                                     </p>
                                 </div>
 
