@@ -318,7 +318,7 @@ $_ENV['tomatopay'] = [
 $_ENV['enable_documents'] = false;	    //是否允许未登陆用户查看文档中心
 $_ENV['documents_name'] = $_ENV['appName'] . ' 文档中心';	    //文档中心名称
 $_ENV['remote_documents'] = true;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
-$_ENV['documents_source'] = 'https://raw.githubusercontent.com/GeekQu/PANEL_DOC/master/GeekQu';	    //远程文档加载地址
+$_ENV['documents_source'] = 'https://raw.githubusercontent.com/aipeach/PANEL_DOC/master/GeekQu';	    //远程文档加载地址
 
 #后台商品列表 销量统计
 $_ENV['sales_period'] = 30;	//统计指定周期内的销量，值为【expire/任意大于0的整数】
