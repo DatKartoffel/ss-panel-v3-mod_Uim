@@ -22,6 +22,8 @@
     </noscript>
     <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 </head>
 
 <body>
@@ -70,7 +72,7 @@
                     如果想自定义文本请删除下面这段script代码,格式为
                     <p>自定义文本</p>
                     -->
-                    <p>够了，我无法忍受你的行为，现在你将成为我们中的一员</p>
+                    <p id="hitokoto">:D 获取中...</p>
                 </div>
             </div>
             <nav>
@@ -201,6 +203,20 @@
             hitokoto.innerHTML = `${ldelim}data.text{rdelim}`;
         }
     }*/
+</script>
+
+<!-- 一言 -->
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'https://v1.hitokoto.cn');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      var data = JSON.parse(xhr.responseText);
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto;
+    }
+  }
+  xhr.send();
 </script>
 
 </body>
