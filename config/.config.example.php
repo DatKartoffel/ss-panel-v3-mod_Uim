@@ -202,6 +202,10 @@ $_ENV['telegram_general_pricing']               = '产品介绍.';              
 $_ENV['telegram_general_terms']                 = '服务条款.';                  //面向游客的服务条款
 
 //沟通设置--------------------------------------------------------------------------------------------
+#客服系统设置，注册地址 https://crisp.chat/
+$_ENV['enable_crisp']= false;		//是否开启客服系统
+$_ENV['crisp_id'] = '';			//客服系统ID
+
 #客服系统设置，注册地址 https://www.mylivechat.com
 $_ENV['enable_mylivechat'] = false;		//是否开启客服系统
 $_ENV['mylivechat_id'] = '';			//客服系统ID

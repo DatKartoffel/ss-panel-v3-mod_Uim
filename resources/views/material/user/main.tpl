@@ -174,4 +174,5 @@
     </div>
 </nav>
 
+{if $config["enable_crisp"] == 'true'}{include file='crisp.tpl'}{/if}
 {if $config["enable_mylivechat"] === true}{include file='mylivechat.tpl'}{/if}
