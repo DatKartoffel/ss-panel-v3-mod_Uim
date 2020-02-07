@@ -424,7 +424,7 @@ table tr td:first-child {
 													<p>使用方式：<a class="btn-dl" href="{$subInfo["clash"]}"><i class="material-icons icon-sm">how_to_vote</i>配置下载</a>.<a class="btn-dl" href="clash://install-config?url={urlencode($subInfo["clash"])}"><i class="material-icons icon-sm">how_to_vote</i>Clash for Windows 一键导入</a></p>
                                             	<hr/>
 												<p><span class="icon icon-lg text-white">filter_4</span> <a class="btn-dl" href="/ssr-download/ClashR-Windows.7z"><i class="material-icons">save_alt</i> 下载</a> ClashR for Windows - [ SS/SSR/VMess ]：</p>
-													<p>教程文档：自行摸索</p>
+													<p>教程文档：<a class="btn-dl" href="/doc/#/Windows/ClashR-for-Windows"><i class="material-icons icon-sm">how_to_vote</i>点击查看</a></p>
 													<p>使用方式：<a class="btn-dl" href="{$subInfo["clashr"]}"><i class="material-icons icon-sm">how_to_vote</i>配置下载</a>.<a class="btn-dl" href="clash://install-config?url={urlencode($subInfo["clashr"])}"><i class="material-icons icon-sm">how_to_vote</i>ClashR for Windows 一键导入</a></p>
 											</div>
 
