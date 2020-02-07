@@ -216,7 +216,8 @@ $_ENV['PushBear_sendkey'] = '';	//请填写您在PushBear获取的sendkey  请�
 
 #工单系统设置
 $_ENV['enable_ticket'] = true;		//是否开启工单系统
-$_ENV['mail_ticket'] = true;		//是否开启工单邮件提醒
+$_ENV['mail_ticket'] = false;		//是否开启工单邮件提醒
+$_ENV['freeuser_ticket'] = false;  //免费用户是否开启工单系统
 
 # Server酱  用户提交新工单或者回复工单时用微信提醒机场主 http://sc.ftqq.com/
 $_ENV['useScFtqq'] = false;		//是否开启工单Server酱提醒
