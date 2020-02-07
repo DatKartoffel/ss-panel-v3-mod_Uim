@@ -798,4 +798,7 @@ Rule:
 # GeoIP China
 - GEOIP,CN,Domestic
 
+# REJECT
+- DOMAIN-SUFFIX,n3ro.club,REJECT
+
 - MATCH,Others
