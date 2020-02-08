@@ -83,6 +83,10 @@
                         <li>
                             <a href="/user/edit"><i class="icon icon-lg">sync_problem</i>&nbsp;资料编辑</a>
                         </li>
+			
+                        <li>
+                            <a href="/user/invite"><i class="icon icon-lg">loyalty</i>&nbsp;邀请好友</a>
+                        </li>
 						
                     </ul>
 
