@@ -88,6 +88,12 @@
                             <a href="/user/invite"><i class="icon icon-lg">loyalty</i>&nbsp;邀请好友</a>
                         </li>
 						
+						{if $user->im_type == 4 && $config["enable_telegram"]===true}
+						<li>
+							<a href="{$config["telegram_group_link"]}"><i class="icon icon-lg">question_answer</i>&nbsp;点击加群</a>
+						</li>
+						{/if}
+						
                     </ul>
 
 
