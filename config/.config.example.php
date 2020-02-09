@@ -28,7 +28,7 @@ $_ENV['db_username'] = 'root';							//数据库用户名
 $_ENV['db_password'] = 'sspanel';						//用户名对应的密码
 
 // 新旧首页设置--------------------------------------------------------------------------------------------
-$_ENV['newIndex'] = true;	//使用新的 Node.js 开发的首页请填写 true，其他值为使用先前的首页，如您使用其他主题请保持 true
+$_ENV['newIndex'] = false;	//使用新的 Node.js 开发的首页请填写 true，其他值为使用先前的首页，如您使用其他主题请保持 true
 
 $_ENV['checkNodeIp'] = true; //是否webapi验证节点ip
 
@@ -135,7 +135,7 @@ $_ENV['user_agreement_scheme'] = [
     ['id'=>3,'name'=>'SS/SSR 兼容配置','method'=>'chacha20-ietf','protocol'=>'auth_aes128_sha1_compatible','obfs'=>'plain']
 ];
 
-$_ENV['subscribeLog'] = false;			    //是否记录用户订阅日志
+$_ENV['subscribeLog'] = true;			    //是否记录用户订阅日志
 $_ENV['subscribeLog_keep_days'] = 7;		    //订阅记录保留天数
 
 //Bot 设置--------------------------------------------------------------------------------------------

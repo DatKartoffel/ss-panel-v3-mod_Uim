@@ -411,7 +411,7 @@ table tr td:first-child {
 											</div>
 
 											<div class="tab-pane fade" id="sub_center_windows">
-												<p><span class="icon icon-lg text-white">filter_1</span> <a class="btn-dl" href="{if $config["subscribe_client"]===true}{if $config["subscribe_client_url"]==''}/user/getPcClient{else}{$config["subscribe_client_url"]}/getClient/{$getClient}{/if}?type=ssr-win{else}https://github.com/shadowsocksrr/shadowsocksr-csharp/releases{/if}"><i class="material-icons">save_alt</i> 下载</a> SSR(R) - [ SS/SSR ]：</p>
+												<p><span class="icon icon-lg text-white">filter_1</span> <a class="btn-dl" href="{if $config["subscribe_client"]===true}{if $config["subscribe_client_url"]==''}/user/getPcClient{else}{$config["subscribe_client_url"]}/getClient/{$getClient}{/if}?type=ssr-win{else}https://raw.githubusercontent.com/aipeach/ssr-download/master/ShadowsocksR-win.zip{/if}"><i class="material-icons">save_alt</i> 下载</a> SSR(R) - [ SS/SSR ]：</p>
 													<p>教程文档：<a class="btn-dl" href="/doc/#/Windows/ShadowsocksR"><i class="material-icons icon-sm">how_to_vote</i>点击查看</a></p>
 													<p>使用方式：<a class="copy-text btn-dl" data-clipboard-text="{$subInfo["ssr"]}"><i class="material-icons icon-sm">how_to_vote</i>订阅链接</a>.<a id="win_ssr" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=ssr","#win_ssr","")><i class="material-icons icon-sm">how_to_vote</i>全部 URL</a></p>
 												<hr/>
