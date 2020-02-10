@@ -418,14 +418,6 @@ table tr td:first-child {
 												<p><span class="icon icon-lg text-white">filter_2</span> <a class="btn-dl" href="{if $config["subscribe_client"]===true}{if $config["subscribe_client_url"]==''}/user/getPcClient{else}{$config["subscribe_client_url"]}/getClient/{$getClient}{/if}?type=v2rayn-win{else}https://github.com/2dust/v2rayN/releases{/if}"><i class="material-icons">save_alt</i> 下载</a> V2RayN - [ SS/VMess ]：</p>
 													<p>教程文档：<a class="btn-dl" href="/doc/#/Windows/V2RayN"><i class="material-icons icon-sm">how_to_vote</i>点击查看</a></p>
 													<p>使用方式：<a class="copy-text btn-dl" data-clipboard-text="{$subInfo["v2ray"]}"><i class="material-icons icon-sm">how_to_vote</i>订阅链接</a>.<a id="win_v2rayn" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=v2ray","#win_v2rayn","")><i class="material-icons icon-sm">how_to_vote</i>全部 URL</a></p>
-												<hr/>
-												<p><span class="icon icon-lg text-white">filter_3</span> <a class="btn-dl" href="/ssr-download/Clash-Windows.7z"><i class="material-icons">save_alt</i> 下载</a> Clash for Windows - [ SS/VMess ]：</p>
-													<p>教程文档：<a class="btn-dl" href="/doc/#/Windows/Clash-for-Windows"><i class="material-icons icon-sm">how_to_vote</i>点击查看</a></p>
-													<p>使用方式：<a class="btn-dl" href="{$subInfo["clash"]}"><i class="material-icons icon-sm">how_to_vote</i>配置下载</a>.<a class="btn-dl" href="clash://install-config?url={urlencode($subInfo["clash"])}"><i class="material-icons icon-sm">how_to_vote</i>Clash for Windows 一键导入</a></p>
-                                            	<hr/>
-												<p><span class="icon icon-lg text-white">filter_4</span> <a class="btn-dl" href="/ssr-download/ClashR-Windows.7z"><i class="material-icons">save_alt</i> 下载</a> ClashR for Windows - [ SS/SSR/VMess ]：</p>
-													<p>教程文档：<a class="btn-dl" href="/doc/#/Windows/ClashR-for-Windows"><i class="material-icons icon-sm">how_to_vote</i>点击查看</a></p>
-													<p>使用方式：<a class="btn-dl" href="{$subInfo["clashr"]}"><i class="material-icons icon-sm">how_to_vote</i>配置下载</a>.<a class="btn-dl" href="clash://install-config?url={urlencode($subInfo["clashr"])}"><i class="material-icons icon-sm">how_to_vote</i>ClashR for Windows 一键导入</a></p>
 											</div>
 
 											<div class="tab-pane fade" id="sub_center_mac">

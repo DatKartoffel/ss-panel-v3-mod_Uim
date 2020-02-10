@@ -88,12 +88,6 @@
                             <a href="/user/invite"><i class="icon icon-lg">loyalty</i>&nbsp;邀请好友</a>
                         </li>
 						
-						{if $user->im_type == 4 && $config["enable_telegram"]===true}
-						<li>
-							<a href="{$config["telegram_group_link"]}"><i class="icon icon-lg">question_answer</i>&nbsp;点击加群</a>
-						</li>
-						{/if}
-						
                     </ul>
 
 
@@ -144,6 +138,18 @@
                         {/if}
 
                     </ul>
+					
+					{if $user->im_type == 4 && $config["user_add_group"]===true}
+						<li>
+							<a target="_blank" href="{$config["telegram_group_url"]} "><i class="icon icon-lg">near_me</i>&nbsp; Telegram群组</a>
+						</li>
+					{/if}
+						
+					{if $user->im_type == 2 && $config["user_add_group"]===true}
+						<li>
+							<a target="_blank" href="{$config["qq_group_url"]} "><i class="icon icon-lg">near_me</i>&nbsp; QQ群组</a>
+						</li>
+					{/if}
 
                     {if $user->isAdmin()}
                 <li>
