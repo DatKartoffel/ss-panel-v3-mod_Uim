@@ -182,9 +182,6 @@ class IDtPay extends AbstractPayment
                                                     <li>
                                                         <a class="waves-attach waves-effect type" data-toggle="tab" data-pay="wxpay"><img src="/images/weixin.jpg" height="50px"></img></a>
                                                     </li>
-                                                    <li>
-                                                        <a class="waves-attach waves-effect type" data-toggle="tab" data-pay="qqpay"><img src="/images/qqpay.jpg" height="50px"></img></a>
-                                                    </li>
                                             
                 
                                             </ul>

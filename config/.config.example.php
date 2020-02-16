@@ -40,7 +40,7 @@ $_ENV['enable_sub_extend'] = true;      // 是否开启订阅中默认显示流�
 $_ENV['disable_sub_mu_port'] = false;   // 将订阅中单端口的信息去除
 
 // 加群设置
-$_ENV['user_add_group'] = true;
+$_ENV['user_add_group'] = false;
 $_ENV['qq_group_url'] = '';
 $_ENV['telegram_group_url'] = '';
 
