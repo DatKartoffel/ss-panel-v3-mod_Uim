@@ -212,7 +212,6 @@ const checkStrong = (sValue) => {
     if (/[a-z]/.test(sValue)) modes++;
     if (/[A-Z]/.test(sValue)) modes++;
     if (/\W/.test(sValue)) modes++;
-
     switch (modes) {
         case 1:
             return 1;
@@ -225,7 +224,6 @@ const checkStrong = (sValue) => {
             break;
     }
 }
-
 const showStrong = () => {
     const password = document.getElementById('passwd').value;
     const $passwordStrongEl = document.getElementById('passwd-strong');
@@ -242,7 +240,6 @@ const showStrong = () => {
         $passwordStrongEl.innerHTML = '你的密码强度为： <span style="color: green; font-weight: bold">强</span>';
     }
 }
-
 document.getElementById('passwd').addEventListener('input', checkStrong);
 </script>
 
@@ -259,7 +256,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                 }
                 {/if}
                 document.getElementById("tos").disabled = true;
-
                 $.ajax({
                     type: "POST",
                     url: "/auth/register",
@@ -270,11 +266,9 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                         passwd: $$getValue('passwd'),
                         repasswd: $$getValue('repasswd'),
                         wechat: $$getValue('wechat'),
-
                         {if $recaptcha_sitekey != null}
                         recaptcha: grecaptcha.getResponse(),
                         {/if}
-
                         imtype: $$getValue('imtype'),
                         code{if $enable_email_verify == true},
                         emailcode: $$getValue('email_code'){/if}{if $geetest_html != null},
@@ -312,30 +306,22 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                     }
                 });
             }
-
             $("html").keydown(function (event) {
                 if (event.keyCode == 13) {
                     $("#tos_modal").modal();
                 }
             });
-
             {if $geetest_html != null}
             $('div.modal').on('shown.bs.modal', function () {
                 $("div.gt_slider_knob").hide();
             });
-
-
             $('div.modal').on('hidden.bs.modal', function () {
                 $("div.gt_slider_knob").show();
             });
-
-
             {/if}
-
             $("#reg").click(function () {
                 register();
             });
-
             $("#tos").click(function () {
                 {if $geetest_html != null}
                 if (typeof validate === 'undefined' || !validate) {
@@ -343,7 +329,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                     $$.getElementById('msg').innerHTML = '请滑动验证码来完成验证'
                     return;
                 }
-
                 {/if}
                 $("#tos_modal").modal();
             });
@@ -354,7 +339,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
 {if $enable_email_verify == true}
     <script>
         var wait = 60;
-
         function time(o) {
             if (wait == 0) {
                 o.removeAttr("disabled");
@@ -370,12 +354,9 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                         1000)
             }
         }
-
-
         $(document).ready(function () {
             $("#email_verify").click(function () {
                 time($("#email_verify"));
-
                 $.ajax({
                     type: "POST",
                     url: "send",
@@ -387,7 +368,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                         if (data.ret) {
                             $("#result").modal();
                             $$.getElementById('msg').innerHTML = data.msg;
-
                         } else {
                             $("#result").modal();
                             $$.getElementById('msg').innerHTML = data.msg;
@@ -409,17 +389,13 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
     <script>
         var handlerEmbed = function (captchaObj) {
             // 将验证码加到id为captcha的元素里
-
             captchaObj.onSuccess(function () {
                 validate = captchaObj.getValidate();
             });
-
             captchaObj.appendTo("#embed-captcha");
-
             captcha = captchaObj;
             // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
         };
-
         initGeetest({
             gt: "{$geetest_html->gt}",
             challenge: "{$geetest_html->challenge}",
@@ -443,7 +419,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
         }
         return "";
     }
-
     {*dumplin:轮子2.js写入cookie*}
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -451,7 +426,6 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
         var expires = "expires=" + d.toGMTString();
         document.cookie = cname + "=" + cvalue + "; " + expires;
     }
-
     {*dumplin:轮子3.js读取cookie*}
     function getCookie(cname) {
         var name = cname + "=";
@@ -462,21 +436,17 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
         }
         return "";
     }
-
     {*dumplin:读取url参数写入cookie，自动跳转隐藏url邀请码*}
     if (getQueryVariable('code') != '') {
         setCookie('code', getQueryVariable('code'), 30);
         window.location.href = '/auth/register';
     }
-
     {if $config['register_mode'] == 'invite'}
     {*dumplin:读取cookie，自动填入邀请码框*}
     if ((getCookie('code')) != '') {
         $("#code").val(getCookie('code'));
     }
     {/if}
-
-
 </script>
 {if $recaptcha_sitekey != null}
     <script src="https://recaptcha.net/recaptcha/api.js" async defer></script>

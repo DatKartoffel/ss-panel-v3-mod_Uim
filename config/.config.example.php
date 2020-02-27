@@ -28,7 +28,7 @@ $_ENV['db_username'] = 'root';							//数据库用户名
 $_ENV['db_password'] = 'sspanel';						//用户名对应的密码
 
 // 新旧首页设置--------------------------------------------------------------------------------------------
-$_ENV['newIndex'] = true;	//使用新的 Node.js 开发的首页请填写 true，其他值为使用先前的首页，如您使用其他主题请保持 true
+$_ENV['newIndex'] = false;	//使用新的 Node.js 开发的首页请填写 true，其他值为使用先前的首页，如您使用其他主题请保持 true
 
 $_ENV['checkNodeIp'] = true; //是否webapi验证节点ip
 
@@ -38,6 +38,12 @@ $_ENV['checkNodeIp'] = true; //是否webapi验证节点ip
 $_ENV['sub_message']       = [];
 $_ENV['enable_sub_extend'] = true;      // 是否开启订阅中默认显示流量剩余以及账户到期时间以及 sub_message 中的信息
 $_ENV['disable_sub_mu_port'] = false;   // 将订阅中单端口的信息去除
+
+// 加群设置
+$_ENV['user_add_group'] = false;
+$_ENV['qq_group_url'] = '';
+$_ENV['telegram_group_url'] = '';
+
 
 //邮件设置--------------------------------------------------------------------------------------------
 $_ENV['mailDriver'] = 'none';	//发送邮件方式：none / mailgun / smtp / sendgrid
@@ -135,7 +141,7 @@ $_ENV['user_agreement_scheme'] = [
     ['id'=>3,'name'=>'SS/SSR 兼容配置','method'=>'chacha20-ietf','protocol'=>'auth_aes128_sha1_compatible','obfs'=>'plain']
 ];
 
-$_ENV['subscribeLog'] = false;			    //是否记录用户订阅日志
+$_ENV['subscribeLog'] = true;			    //是否记录用户订阅日志
 $_ENV['subscribeLog_keep_days'] = 7;		    //订阅记录保留天数
 
 //Bot 设置--------------------------------------------------------------------------------------------
@@ -202,6 +208,10 @@ $_ENV['telegram_general_pricing']               = '产品介绍.';              
 $_ENV['telegram_general_terms']                 = '服务条款.';                  //面向游客的服务条款
 
 //沟通设置--------------------------------------------------------------------------------------------
+#客服系统设置，注册地址 https://crisp.chat/
+$_ENV['enable_crisp']= false;		//是否开启客服系统
+$_ENV['crisp_id'] = '';			//客服系统ID
+
 #客服系统设置，注册地址 https://www.mylivechat.com
 $_ENV['enable_mylivechat'] = false;		//是否开启客服系统
 $_ENV['mylivechat_id'] = '';			//客服系统ID
@@ -212,7 +222,8 @@ $_ENV['PushBear_sendkey'] = '';	//请填写您在PushBear获取的sendkey  请�
 
 #工单系统设置
 $_ENV['enable_ticket'] = true;		//是否开启工单系统
-$_ENV['mail_ticket'] = true;		//是否开启工单邮件提醒
+$_ENV['mail_ticket'] = false;		//是否开启工单邮件提醒
+$_ENV['freeuser_ticket'] = false;  //免费用户是否开启工单系统
 
 # Server酱  用户提交新工单或者回复工单时用微信提醒机场主 http://sc.ftqq.com/
 $_ENV['useScFtqq'] = false;		//是否开启工单Server酱提醒
@@ -318,7 +329,7 @@ $_ENV['tomatopay'] = [
 $_ENV['enable_documents'] = false;	    //是否允许未登陆用户查看文档中心
 $_ENV['documents_name'] = $_ENV['appName'] . ' 文档中心';	    //文档中心名称
 $_ENV['remote_documents'] = true;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
-$_ENV['documents_source'] = 'https://raw.githubusercontent.com/GeekQu/PANEL_DOC/master/GeekQu';	    //远程文档加载地址
+$_ENV['documents_source'] = 'https://raw.githubusercontent.com/aipeach/PANEL_DOC/master/GeekQu';	    //远程文档加载地址
 
 #后台商品列表 销量统计
 $_ENV['sales_period'] = 30;	//统计指定周期内的销量，值为【expire/任意大于0的整数】

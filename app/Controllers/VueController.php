@@ -67,6 +67,7 @@ class VueController extends BaseController
             'dateY' => date('Y'),
             'isLogin' => $user->isLogin,
             'enable_telegram' => Config::get('enable_telegram'),
+	    'enable_crisp' => Config::get('enable_crisp'),
             'enable_mylivechat' => Config::get('enable_mylivechat'),
             'enable_flag' => Config::get('enable_flag'),
             'payment_type' => Config::get('payment_system'),

@@ -183,13 +183,13 @@ class XCat
 
     public function initdownload()
     {
-        system('git clone --depth=3 https://github.com/xcxnig/ssr-download.git ' . BASE_PATH . '/public/ssr-download/ && git gc', $ret);
+        system('git clone --depth=3 https://github.com/aipeach/ssr-download.git ' . BASE_PATH . '/public/ssr-download/ && git gc', $ret);
         echo $ret;
     }
 
     public function initdocuments()
     {
-        system('git clone https://github.com/GeekQu/PANEL_DOC.git ' . BASE_PATH . "/public/docs/", $ret);
+        system('git clone https://github.com/aipeach/PANEL_DOC.git ' . BASE_PATH . "/public/docs/", $ret);
         echo $ret;
     }
 

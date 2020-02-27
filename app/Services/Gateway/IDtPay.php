@@ -200,6 +200,7 @@ class IDtPay extends AbstractPayment
                         <script>
         var type = "wxpay";
             var type = "alipay";
+            var type = "qqpay";
     var pid = 0;
     $(".type").click(function(){
         type = $(this).data("pay");
@@ -233,6 +234,9 @@ class IDtPay extends AbstractPayment
                     }else if(type=="alipay"){
                         $("#result").modal();
                         $("#msg").html("正在跳转到支付宝..."+data.code);
+                    }else if(type=="alipay"){
+                        $("#result").modal();
+                        $("#msg").html("正在跳转到QQ..."+data.code);
                     }
                 }
             }

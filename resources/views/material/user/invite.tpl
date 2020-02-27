@@ -55,6 +55,7 @@
                                                     点击复制
                                                 </button>
                                             </div>
+											<!--
                                             <div class="invite-link">
                                                 <input type="text"
                                                        class="input form-control form-control-monospace cust-link"
@@ -65,6 +66,7 @@
                                                     点击复制
                                                 </button>
                                             </div>
+											-->
                                         </div>
                                     </div>
                                 </div>

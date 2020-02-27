@@ -10,187 +10,6 @@
         <section class="content-inner margin-top-no">
 
             <div class="col-xx-12 col-sm-6">
-            
-                <div class="card margin-bottom-no">
-                    <div class="card-main">
-                        <div class="card-inner">
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading">节点连接密码修改</div>
-                                    <button class="btn btn-flat" id="ss-pwd-update"><span class="icon">check</span>&nbsp;</button>
-                                </div>
-
-                                <p>当前连接密码：<code id="ajax-user-passwd">{$user->passwd}</code>
-                                    <button class="kaobei copy-text btn btn-subscription" type="button" data-clipboard-text="{$user->passwd}">
-                                        点击拷贝
-                                    </button>
-                                </p>
-                                <!--<div class="form-group form-group-label">
-                                    <label class="floating-label" for="sspwd">新连接密码</label>
-                                    <input class="form-control maxwidth-edit" id="sspwd" type="text">
-                                </div>
-                                <br>-->
-                                <p>为了确保您的安全，节点连接密码不允许自定义，点击提交按钮将会自动生成由随机字母和数字组成的连接密码。</p>
-                                <p>修改连接密码同时也会自动为您重新生成 V2Ray 节点的 UUID。</p>
-                                <p>修改密码后，请立刻更新各个客户端上的连接信息。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-{if $config['protocol_specify']===false}
-				<div class="card margin-bottom-no">
-					<div class="card-main">
-						<div class="card-inner">
-							<div class="card-inner">
-								<div class="cardbtn-edit">
-
-									<div class="card-heading">切换协议配置</div>
-									<button class="btn btn-flat" id="user_agreement_scheme-update"><span class="icon">check</span>&nbsp;</button>
-								</div>
-								<p>当前配置：
-								{foreach $schemes as $scheme}
-									{if $scheme['method'] == $user->method && $scheme['protocol'] == $user->protocol && $scheme['obfs'] == $user->obfs}
-										<code>{$scheme['name']}</code>
-									{/if}
-								{/foreach}
-								</p>
-								<div class="form-group form-group-label control-highlight-custom dropdown">
-									<button id="agreement_scheme" type="button" class="form-control maxwidth-edit" data-toggle="dropdown" value="0">请选择配置方案</button>
-									<ul class="dropdown-menu" aria-labelledby="agreement_scheme">
-									{foreach $schemes as $scheme}
-										<li><a href="#" class="dropdown-option" onclick="return false;" val="{$scheme['id']}" data="agreement_scheme">{$scheme['name']}</a></li>
-									{/foreach}
-									</ul>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-                </div>
-
-
-{else}
-
-                <div class="card margin-bottom-no">
-                    <div class="card-main">
-                        <div class="card-inner">
-                            <div class="card-inner">
-                                <div class="card-heading">选择客户端</div>
-                                <p>SS/SSD/SSR 支持的加密方式和混淆方式有所不同，请根据实际情况来进行选择</p>
-                                <p>在这里选择你需要使用的客户端可以帮助你筛选加密方式和混淆方式</p>
-                                <p>auth_chain 系为实验性协议，可能造成不稳定或无法使用</p>
-                                <br>
-                                <button class="btn btn-subscription" type="button" id="filter-btn-ss">SS/SSD</button>
-                                <button class="btn btn-subscription" type="button" id="filter-btn-ssr">SSR</button>
-                                <button class="btn btn-subscription" type="button" id="filter-btn-universal">通用</button>
-                            </div>
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading">加密方式修改</div>
-                                    <button class="btn btn-flat" id="method-update"><span class="icon">check</span>&nbsp</button>
-                                </div>
-                                <p>
-                                    当前加密方式：<code id="ajax-user-method" data-default="method">[{if URL::CanMethodConnect($user->method) == 2}SS/SSD{else}SS/SSR{/if}可连接] {$user->method}</code>
-                                </p>
-                                <div class="form-group form-group-label control-highlight-custom dropdown">
-                                    <label class="floating-label" for="method">加密方式</label>
-                                    <button id="method" class="form-control maxwidth-edit" data-toggle="dropdown"
-                                            value="{$user->method}"></button>
-                                    <ul class="dropdown-menu" aria-labelledby="method">
-                                        {$method_list = $config_service->getSupportParam('method')}
-                                        {foreach $method_list as $method}
-                                            <li class="{if URL::CanMethodConnect($user->method) == 2}filter-item-ss{else}filter-item-universal{/if}">
-                                                <a href="#" class="dropdown-option" onclick="return false;"
-                                                   val="{$method}"
-                                                   data="method">[{if URL::CanMethodConnect($method) == 2}SS/SSD{else}SS/SSR{/if}
-                                                    可连接] {$method}</a>
-                                            </li>
-                                        {/foreach}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading">协议&混淆设置</div>
-                                    <button class="btn btn-flat" id="ssr-update"><span class="icon">check</span>&nbsp;</button>
-                                </div>
-                                <p>当前协议：<code id="ajax-user-protocol" data-default="protocol">[{if URL::CanProtocolConnect($user->protocol) == 3}SS/SSD/SSR{else}SSR{/if}可连接] {$user->protocol}</code></p>
-                                <div class="form-group form-group-label control-highlight-custom dropdown">
-                                    <label class="floating-label" for="protocol">协议</label>
-                                    <button id="protocol" class="form-control maxwidth-edit" data-toggle="dropdown"
-                                            value="{$user->protocol}"></button>
-                                    <ul class="dropdown-menu" aria-labelledby="protocol">
-                                        {$protocol_list = $config_service->getSupportParam('protocol')}
-                                        {foreach $protocol_list as $protocol}
-                                            <li class="{if URL::CanProtocolConnect($protocol) == 3}filter-item-universal{else}filter-item-ssr{/if}">
-                                                <a href="#" class="dropdown-option" onclick="return false;" val="{$protocol}" data="protocol">
-                                                    [{if URL::CanProtocolConnect($protocol) == 3}SS/SSD/SSR{else}SSR{/if}
-                                                    可连接] {$protocol}
-                                                </a>
-                                            </li>
-                                        {/foreach}
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="card-inner">
-                                <p>当前混淆方式：<code id="ajax-user-obfs" data-default="obfs">[{if URL::CanObfsConnect($user->obfs) >= 3}SS/SSD/SSR{elseif URL::CanObfsConnect($user->obfs) == 1}SSR{else}SS/SSD{/if}可连接] {$user->obfs}</code></p>
-                                <p>SS/SSD 和 SSR 支持的混淆类型有所不同，simple_obfs_* 为 SS/SSD 的混淆方式，其他为 SSR 的混淆方式</p>
-                                <div class="form-group form-group-label control-highlight-custom dropdown">
-                                    <label class="floating-label" for="obfs">混淆方式</label>
-                                    <button id="obfs" class="form-control maxwidth-edit" data-toggle="dropdown" value="{$user->obfs}"></button>
-                                    <ul class="dropdown-menu" aria-labelledby="obfs">
-                                        {$obfs_list = $config_service->getSupportParam('obfs')}
-                                        {foreach $obfs_list as $obfs}
-                                            <li class="{if URL::CanObfsConnect($obfs) >= 3}filter-item-universal{else}{if URL::CanObfsConnect($obfs) == 1}filter-item-ssr{else}filter-item-ss{/if}{/if}">
-                                                <a href="#" class="dropdown-option" onclick="return false;" val="{$obfs}" data="obfs">
-                                                    [{if URL::CanObfsConnect($obfs) >= 3}SS/SSD/SSR{else}{if URL::CanObfsConnect($obfs) == 1}SSR{else}SS/SSD{/if}{/if}可连接] {$obfs}
-                                                </a>
-                                            </li>
-                                        {/foreach}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="card-inner">
-                                <p>当前混淆参数：<code id="ajax-user-obfs-param">{$user->obfs_param}</code></p>
-                                <div class="form-group form-group-label">
-                                    <label class="floating-label" for="obs-param">在这输入混淆参数</label>
-                                    <input class="form-control maxwidth-edit" id="obfs-param" type="text">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-{/if}
-
-				<div class="card margin-bottom-no">
-					<div class="card-main">
-						<div class="card-inner">
-							<div class="card-inner">
-								<div class="cardbtn-edit">
-									<div class="card-heading">重置订阅链接</div>
-									<div class="reset-flex">
-										<a class="reset-link btn btn-brand-accent btn-flat" ><i class="icon">autorenew</i>&nbsp;</a>
-									</div>
-								</div>
-                                <p>点击会重置您的订阅链接，此操作不可逆，请谨慎。</p>
-							</div>
-						</div>
-					</div>
-                </div>
-
-            </div>
-
-
-            <div class="col-xx-12 col-sm-6">
 
                 <div class="card margin-bottom-no">
                     <div class="card-main">
@@ -220,50 +39,50 @@
                         </div>
                     </div>
                 </div>
-
+            
                 <div class="card margin-bottom-no">
                     <div class="card-main">
                         <div class="card-inner">
                             <div class="card-inner">
                                 <div class="cardbtn-edit">
-                                    <div class="card-heading">IP 解封</div>
-                                    <button class="btn btn-flat" id="unblock"><span class="icon">not_interested</span>&nbsp;
-                                    </button>
+                                    <div class="card-heading">节点连接密码修改</div>
+                                    <button class="btn btn-flat" id="ss-pwd-update"><span class="icon">check</span>&nbsp;</button>
                                 </div>
-                                <p>当前状态：<code id="ajax-block">{$Block}</code></p>
 
+                                <p>当前连接密码：<code id="ajax-user-passwd">{$user->passwd}</code>
+                                    <button class="kaobei copy-text btn btn-subscription" type="button" data-clipboard-text="{$user->passwd}">
+                                        点击拷贝
+                                    </button>
+                                </p>
+                                <!--<div class="form-group form-group-label">
+                                    <label class="floating-label" for="sspwd">新连接密码</label>
+                                    <input class="form-control maxwidth-edit" id="sspwd" type="text">
+                                </div>
+                                <br>-->
+                                <p>为了确保您的安全，节点连接密码不允许自定义，点击提交按钮将会自动生成由随机字母和数字组成的连接密码。</p>
+                                <p>修改连接密码同时也会自动为您重新生成 V2Ray 节点的 UUID。</p>
+                                <p>修改密码后，请立刻更新各个客户端上的连接信息。</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card margin-bottom-no">
-                    <div class="card-main">
-                        <div class="card-inner">
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading">每日邮件接收设置</div>
-                                    <button class="btn btn-flat" id="mail-update"><span class="icon">check</span>&nbsp;
-                                    </button>
-                                </div>
-                                <p class="card-heading"></p>
-                                <p>当前设置：<code id="ajax-mail" data-default="mail">{if $user->sendDailyMail==1}发送{else}不发送{/if}</code></p>
-                                <div class="form-group form-group-label control-highlight-custom dropdown">
-                                    <label class="floating-label" for="mail">发送设置</label>
-                                    <button type="button" id="mail" class="form-control maxwidth-edit"
-                                            data-toggle="dropdown" value="{$user->sendDailyMail}"></button>
-                                    <ul class="dropdown-menu" aria-labelledby="mail">
-                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="1"
-                                               data="mail">发送</a></li>
-                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="0"
-                                               data="mail">不发送</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+				<div class="card margin-bottom-no">
+					<div class="card-main">
+						<div class="card-inner">
+							<div class="card-inner">
+								<div class="cardbtn-edit">
+									<div class="card-heading">重置订阅链接</div>
+									<div class="reset-flex">
+										<a class="reset-link btn btn-brand-accent btn-flat" ><i class="icon">autorenew</i>&nbsp;</a>
+									</div>
+								</div>
+                                <p>点击会重置您的订阅链接，此操作不可逆，请谨慎。</p>
+							</div>
+						</div>
+					</div>
                 </div>
-
+				
                 <div class="card margin-bottom-no">
                     <div class="card-main">
                         <div class="card-inner">
@@ -306,6 +125,83 @@
                                 <div class="form-group form-group-label">
                                     <label class="floating-label" for="wechat">在这输入联络方式账号</label>
                                     <input class="form-control maxwidth-edit" id="wechat" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="card margin-bottom-no">
+                    <div class="card-main">
+                        <div class="card-inner">
+                            <div class="card-inner">
+                                <div class="cardbtn-edit">
+                                    <div class="card-heading">IP 解封</div>
+                                    <button class="btn btn-flat" id="unblock"><span class="icon">not_interested</span>&nbsp;
+                                    </button>
+                                </div>
+                                <p>当前状态：<code id="ajax-block">{$Block}</code></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="card margin-bottom-no">
+                    <div class="card-main">
+                        <div class="card-inner">
+                            <div class="card-inner">
+                                <div class="cardbtn-edit">
+                                    <div class="card-heading">主题修改</div>
+                                    <button class="btn btn-flat" id="theme-update"><span class="icon">check</span>&nbsp;
+                                    </button>
+                                </div>
+                                <p>当前主题：<code data-default="theme">{$user->theme}</code></p>
+                                <div class="form-group form-group-label control-highlight-custom dropdown">
+                                    <label class="floating-label" for="theme">主题</label>
+                                    <button id="theme" type="button" class="form-control maxwidth-edit" data-toggle="dropdown" value="{$user->theme}">
+
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="mail">
+                                        {foreach $themes as $theme}
+                                            <li>
+                                                <a href="#" class="dropdown-option" onclick="return false;"
+                                                   val="{$theme}" data="theme">{$theme}</a>
+                                            </li>
+                                        {/foreach}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-xx-12 col-sm-6">
+
+                <div class="card margin-bottom-no">
+                    <div class="card-main">
+                        <div class="card-inner">
+                            <div class="card-inner">
+                                <div class="cardbtn-edit">
+                                    <div class="card-heading">每日邮件接收设置</div>
+                                    <button class="btn btn-flat" id="mail-update"><span class="icon">check</span>&nbsp;
+                                    </button>
+                                </div>
+                                <p class="card-heading"></p>
+                                <p>当前设置：<code id="ajax-mail" data-default="mail">{if $user->sendDailyMail==1}发送{else}不发送{/if}</code></p>
+                                <div class="form-group form-group-label control-highlight-custom dropdown">
+                                    <label class="floating-label" for="mail">发送设置</label>
+                                    <button type="button" id="mail" class="form-control maxwidth-edit"
+                                            data-toggle="dropdown" value="{$user->sendDailyMail}"></button>
+                                    <ul class="dropdown-menu" aria-labelledby="mail">
+                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="1"
+                                               data="mail">发送</a></li>
+                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="0"
+                                               data="mail">不发送</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -444,35 +340,6 @@
                         </div>
                     </div>
                 {/if}
-
-                <div class="card margin-bottom-no">
-                    <div class="card-main">
-                        <div class="card-inner">
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading">主题修改</div>
-                                    <button class="btn btn-flat" id="theme-update"><span class="icon">check</span>&nbsp;
-                                    </button>
-                                </div>
-                                <p>当前主题：<code data-default="theme">{$user->theme}</code></p>
-                                <div class="form-group form-group-label control-highlight-custom dropdown">
-                                    <label class="floating-label" for="theme">主题</label>
-                                    <button id="theme" type="button" class="form-control maxwidth-edit" data-toggle="dropdown" value="{$user->theme}">
-
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="mail">
-                                        {foreach $themes as $theme}
-                                            <li>
-                                                <a href="#" class="dropdown-option" onclick="return false;"
-                                                   val="{$theme}" data="theme">{$theme}</a>
-                                            </li>
-                                        {/foreach}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 

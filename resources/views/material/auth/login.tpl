@@ -158,9 +158,7 @@
                 return;
             }
             {/if}
-
             document.getElementById("login").disabled = true;
-
             $.ajax({
                 type: "POST",
                 url: "/auth/login",
@@ -202,7 +200,6 @@
                 }
             });
         }
-
         $("html").keydown(function (event) {
             if (event.keyCode == 13) {
                 login();
@@ -211,11 +208,9 @@
         $("#login").click(function () {
             login();
         });
-
         $('div.modal').on('shown.bs.modal', function () {
             $("div.gt_slider_knob").hide();
         });
-
         $('div.modal').on('hidden.bs.modal', function () {
             $("div.gt_slider_knob").show();
         });
@@ -237,7 +232,6 @@
                         f();
                     }
             );
-
             function f() {
                 $.ajax({
                     type: "POST",
@@ -250,7 +244,6 @@
                     success: (data) => {
                         if (data.ret > 0) {
                             clearTimeout(tid);
-
                             $.ajax({
                                 type: "POST",
                                 url: "/auth/qrcode_login",
@@ -273,7 +266,6 @@
                                             }`;
                                 }
                             });
-
                         } else {
                             if (data.ret === -1) {
                                 $('#telegram-qr').replaceWith('此二维码已经过期，请刷新页面后重试。');
@@ -292,8 +284,6 @@
                 });
                 tid = setTimeout(f, 2500); //循环调用触发setTimeout
             }
-
-
         })
     </script>
 {/if}
@@ -303,17 +293,13 @@
     <script>
         var handlerEmbed = function (captchaObj) {
             // 将验证码加到id为captcha的元素里
-
             captchaObj.onSuccess(function () {
                 validate = captchaObj.getValidate();
             });
-
             captchaObj.appendTo("#embed-captcha");
-
             captcha = captchaObj;
             // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
         };
-
         initGeetest({
             gt: "{$geetest_html->gt}",
             challenge: "{$geetest_html->challenge}",
