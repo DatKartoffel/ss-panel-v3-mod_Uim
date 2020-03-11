@@ -225,9 +225,6 @@
                                                         <strong><b><span
                                                                         class="node-alive">{if $node['online_user'] == -1}N/A{else}{$node['online_user']}{/if}</span></b></strong>
                                                         | <span class="node-icon">
-                                                            <i class="icon icon-lg">cloud</i></span>
-                                                        <span class="node-load">负载：{if $node['latest_load'] == -1}N/A{else}{$node['latest_load']}%{/if}</span>
-                                                        | <span class="node-icon">
                                                             <i class="icon icon-lg">import_export</i></span>
                                                         <span class="node-mothed">{$node['bandwidth']}</span>
                                                         | <span class="node-icon"><i class="icon icon-lg">equalizer</i></span>

@@ -39,11 +39,6 @@ $_ENV['sub_message']       = [];
 $_ENV['enable_sub_extend'] = true;      // 是否开启订阅中默认显示流量剩余以及账户到期时间以及 sub_message 中的信息
 $_ENV['disable_sub_mu_port'] = false;   // 将订阅中单端口的信息去除
 
-// 加群设置
-$_ENV['user_add_group'] = false;
-$_ENV['qq_group_url'] = '';
-$_ENV['telegram_group_url'] = '';
-
 
 //邮件设置--------------------------------------------------------------------------------------------
 $_ENV['mailDriver'] = 'none';	//发送邮件方式：none / mailgun / smtp / sendgrid
