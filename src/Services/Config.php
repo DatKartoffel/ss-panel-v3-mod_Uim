@@ -43,6 +43,8 @@ class Config
             'enable_donate'           => $_ENV['enable_donate'],
             'enable_telegram'         => $_ENV['enable_telegram'],
             'payment_system'          => $_ENV['payment_system'],
+            'enable_crisp'            => $_ENV['enable_crisp'],
+            'crisp_id'                => $_ENV['crisp_id'],
             'enable_mylivechat'       => $_ENV['enable_mylivechat'],
             'mylivechat_id'           => $_ENV['mylivechat_id'],
             'enable_ticket'           => $_ENV['enable_ticket'],

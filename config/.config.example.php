@@ -25,7 +25,7 @@ $_ENV['muKey']      = 'default_mu_key';               //用于校验魔改后端
 // - 如果您全部节点使用数据库连接，则保持为 false
 // - 如果您拥有独立的 Webapi 站点或 Seed 等，则保持为 false
 // - 如果您不使用数据库连接并且无独立 Webapi 站点或 Seed 等，请更改为 true
-$_ENV['Webapi']     = false;
+$_ENV['Webapi']     = true;
 
 
 //数据库设置--------------------------------------------------------------------------------------------
@@ -259,6 +259,9 @@ $_ENV['telegram_general_terms']             = '服务条款.';                  
 $_ENV['enable_mylivechat']    = false;   //是否开启客服系统
 $_ENV['mylivechat_id']        = '';      //客服系统ID
 
+$_ENV['enable_crisp']         = false;      //是否开启客服系统
+$_ENV['crisp_id']             = '';         //客服系统ID
+
 # PushBear  基于微信模板的向关注了二维码的用户以微信方式推送消息 https://pushbear.ftqq.com/，目前仅用户推送新公告
 $_ENV['usePushBear']          = false;
 $_ENV['PushBear_sendkey']     = '';       //请填写您在PushBear获取的sendkey，请仔细检查勿粘贴错
@@ -488,7 +491,7 @@ $_ENV['sessionDriver']          = 'cookie';            //可选: cookie,redis
 $_ENV['cacheDriver']            = 'cookie';            //可选: cookie,redis
 $_ENV['tokenDriver']            = 'db';                //可选: db,redis
 
-$_ENV['enable_login_bind_ip']   = true;        //是否将登陆线程和IP绑定
+$_ENV['enable_login_bind_ip']   = false;        //是否将登陆线程和IP绑定
 $_ENV['rememberMeDuration']     = 7;           //登录时记住账号时长天数
 $_ENV['Speedtest_duration']     = 6;           //显示多长时间的测速记录
 

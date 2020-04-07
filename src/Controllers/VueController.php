@@ -74,6 +74,7 @@ class VueController extends BaseController
             'dateY'                   => date('Y'),
             'isLogin'                 => $user->isLogin,
             'enable_telegram'         => $_ENV['enable_telegram'],
+            'enable_crisp'            => $_ENV['enable_crisp'],
             'enable_mylivechat'       => $_ENV['enable_mylivechat'],
             'enable_flag'             => $_ENV['enable_flag'],
             'enable_ticket'           => $_ENV['enable_ticket'],
