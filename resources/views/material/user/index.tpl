@@ -442,9 +442,13 @@ table tr td:first-child {
 													<a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>.<a id="general_ssr" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=ssr","#general_ssr","")><i class="material-icons icon-sm">send</i> 拷贝全部节点 URL</a>
 												</p>
 												<hr/>
+												<p><span class="icon icon-lg text-white">filter_3</span> [ ClashR ]：
+													<a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clashr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+												</p>
+												<hr/>
 												<p>众所周知，由于当前 V2Ray 暂无统一格式的订阅.</p>
 												<p>如您使用 V2Ray 节点，并且您所使用的客户端不在我们的支持内，且其不支持 V2RayN 格式的订阅，那么请您考虑更换客户端或与我们的客服联系.</p>
-												<p><span class="icon icon-lg text-white">filter_3</span> [ V2RayN ]：
+												<p><span class="icon icon-lg text-white">filter_4</span> [ V2RayN ]：
 													<a class="copy-text btn-dl" data-clipboard-text="{$subInfo['v2ray']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>.<a id="general_v2ray" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=v2ray","#general_v2ray","")><i class="material-icons icon-sm">send</i> 拷贝全部节点 URL</a>
 												</p>
 											</div>
