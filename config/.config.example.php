@@ -355,6 +355,16 @@ $_ENV['tomatopay'] = [
     ],
 ];
 
+$_ENV['idtpay']=[
+    'partner'=>"", //商户号
+    'key' =>"", //商户key
+    'sign_type'=>strtoupper('MD5'),
+    'input_charset'=>strtolower('utf-8'),
+    'subjects'=>["声声乌龙",'幽兰拿铁'], //商品名称
+    'transport'=>'https' ,//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
+    'apiurl'=>'https://pay.idt.xyz/', //http开头
+    'appname'=>$_ENV['appName'],
+];
 
 //其他面板显示设置------------------------------------------------------------------------------------------
 //旧版本首页的文字讯息 <p id="hitokoto">:D 获取中...</p> 启用一言API
