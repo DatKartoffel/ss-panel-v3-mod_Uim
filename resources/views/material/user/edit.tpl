@@ -248,6 +248,7 @@
                                         {if $user->im_type==3}Google+{/if}
                                         {if $user->im_type==4}Telegram{/if}
                                         {if $user->im_type==5}Discord{/if}
+                                        {if $user->im_type==10}邮箱{/if}
                                     </code>
                                 </p>
                                 <p>当前联络方式账号：

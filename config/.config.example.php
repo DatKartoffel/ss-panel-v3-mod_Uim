@@ -89,6 +89,9 @@ $_ENV['reg_forbidden_port']        = '';                        //注册时默�
 $_ENV['mu_suffix']                 = 'microsoft.com';           //单端口多用户混淆参数后缀，可以随意修改，但请保持前后端一致
 $_ENV['mu_regex']                  = '%5m%id.%suffix';          //单端口多用户混淆参数表达式，%5m代表取用户特征 md5 的前五位，%id 代表用户id, %suffix 代表上面这个后缀。
 
+# 是否开启用户注册联系方式填写，关闭将使用邮箱作为联系方式
+$_ENV['default_imtype']            = true;
+
 #邀请链接
 $_ENV['invite_price']              = -1;                        //用户购买邀请码所需要的价格，价格小于0时视为不开放购买
 $_ENV['custom_invite_price']       = -1;                        //用户定制邀请码所需要的价格，价格小于0时视为不开放购买

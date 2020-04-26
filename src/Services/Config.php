@@ -47,6 +47,7 @@ class Config
             'crisp_id'                => $_ENV['crisp_id'],
             'enable_mylivechat'       => $_ENV['enable_mylivechat'],
             'mylivechat_id'           => $_ENV['mylivechat_id'],
+            'default_imtype'          => $_ENV['default_imtype'],
             'enable_ticket'           => $_ENV['enable_ticket'],
             'enable_admin_contact'    => $_ENV['enable_admin_contact'],
             'admin_contact1'          => $_ENV['admin_contact1'],
