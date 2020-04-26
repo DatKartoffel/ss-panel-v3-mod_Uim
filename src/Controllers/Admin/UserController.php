@@ -316,6 +316,8 @@ class UserController extends AdminController
         $user = User::find($id);
 
         $email1 = $user->email;
+		
+        $user->user_name = $request->getParam('user_name');
 
         $user->email = $request->getParam('email');
 

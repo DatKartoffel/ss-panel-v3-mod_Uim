@@ -21,6 +21,12 @@
                             </div>
 
                             <div class="form-group form-group-label">
+                                <label class="floating-label" for="name">用户名</label>
+                                <input class="form-control maxwidth-edit" id="name" type="name"
+                                       value="{$edit_user->user_name}">
+                            </div>
+
+                            <div class="form-group form-group-label">
                                 <label class="floating-label" for="remark">备注(仅对管理员可见)</label>
                                 <input class="form-control maxwidth-edit" id="remark" type="text"
                                        value="{$edit_user->remark}">
@@ -361,6 +367,7 @@
                 dataType: "json",
                 data: {
                     email: $$getValue('email'),
+                    user_name: $$getValue('name'),
                     pass: $$getValue('pass'),
                     auto_reset_day: $$getValue('auto_reset_day'),
                     auto_reset_bandwidth: $$getValue('auto_reset_bandwidth'),
