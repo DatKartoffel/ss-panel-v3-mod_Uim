@@ -4,7 +4,7 @@
 <main class="content">
     <div class="content-header ui-content-header">
         <div class="container">
-            <h1 class="content-heading">商品列表</h1>
+            <h1 class="content-heading">换取流量列表</h1>
         </div>
     </div>
     <div class="container">
@@ -14,9 +14,9 @@
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-                            <p>商品不可叠加，新购商品会覆盖旧商品的效果。</p>
-                            <p>购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效。</p>
-                            <p><i class="icon icon-lg">attach_money</i>当前余额：<font color="#399AF2" size="5">{$user->money}</font> 元</p>
+                            <p>套餐不可叠加，新购商品会覆盖旧套餐的效果。</p>
+                            <p>换取新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效。</p>
+                            <p><i class="icon icon-lg">attach_money</i>当前捐赠余额：<font color="#399AF2" size="5">{$user->money}</font> 元</p>
                         </div>
                     </div>
                 </div>

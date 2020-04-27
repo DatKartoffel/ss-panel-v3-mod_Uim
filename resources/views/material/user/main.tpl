@@ -107,7 +107,7 @@
                         </li>
                     {/if}
 
-                        {if $config['enable_ticket']===true}
+                        {if $config['enable_ticket']===true && $user->class!=0}
                             <li>
                                 <a href="/user/ticket"><i class="icon icon-lg">question_answer</i>&nbsp;工单系统</a>
                             </li>
@@ -115,17 +115,17 @@
                         
                     </ul>
 
-                    <a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">商店</a>
+                    <a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">捐赠</a>
                     <ul class="menu-collapse collapse in" id="ui_menu_help">
                         <li>
-                            <a href="/user/code"><i class="icon icon-lg">code</i>&nbsp;充值</a>
+                            <a href="/user/code"><i class="icon icon-lg">code</i>&nbsp;捐赠系统</a>
                         </li>
 
                         <li>
-                            <a href="/user/shop"><i class="icon icon-lg">shop</i>&nbsp;套餐购买</a>
+                            <a href="/user/shop"><i class="icon icon-lg">shop</i>&nbsp;换取流量</a>
                         </li>
 
-                        <li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
+                        <li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;换取记录</a></li>
 
                         {if $config['enable_donate']===true}
                             <li>

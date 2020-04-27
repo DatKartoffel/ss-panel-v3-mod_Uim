@@ -374,10 +374,10 @@ $_ENV['idtpay']=[
 $_ENV['old_index_DESC']       = '<p>够了，我无法忍受你的行为，现在你将成为我们中的一员</p>';
 
 #用户文档
-$_ENV['use_this_doc']         = false;	    //使用此文档
+$_ENV['use_this_doc']         = true;	    //使用此文档
 $_ENV['enable_documents']     = false;	    //是否允许未登陆用户查看文档中心
 $_ENV['documents_name']       = $_ENV['appName'] . ' 文档中心';	    //文档中心名称
-$_ENV['remote_documents']     = true;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
+$_ENV['remote_documents']     = false;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
 $_ENV['documents_source']     = 'https://raw.githubusercontent.com/GeekQu/PANEL_DOC/master/SSPanel';	    //远程文档加载地址
 
 #后台商品列表 销量统计

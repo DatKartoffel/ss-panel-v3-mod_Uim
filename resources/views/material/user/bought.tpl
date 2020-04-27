@@ -4,7 +4,7 @@
 <main class="content">
     <div class="content-header ui-content-header">
         <div class="container">
-            <h1 class="content-heading">购买记录</h1>
+            <h1 class="content-heading">换取记录</h1>
         </div>
     </div>
     <div class="container">
@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-                            <p>系统中您的购买记录。</p>
+                            <p>系统中您的换取流量记录。</p>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                                     <table class="table">
                                         <tr>
                                             <th>ID</th>
-                                            <th>购买时间</th>
+                                            <th>换取时间</th>
                                             <th>商品名称</th>
                                             <th>内容</th>
                                             <th>价格</th>
