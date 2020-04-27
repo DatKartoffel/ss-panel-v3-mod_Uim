@@ -6,7 +6,6 @@ ShadowsocksR(R) 是在 Windows 平台上的客户端软件，支持 ShadowsocksR
 
 以下是各平台该应用的下载地址。
 
-- Windows：[ShadowsocksR 停更](#)
 - Windows：[ShadowsocksRR](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases)
 - ...
 

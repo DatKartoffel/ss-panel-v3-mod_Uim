@@ -8,7 +8,6 @@ ShadowsocksR(R) 是在 Android 平台上的客户端软件，支持 ShadowsocksR
 
 以下是各平台该应用的下载地址。
 
-- Android：SSR 停更
 - Android：[SSRR](https://github.com/shadowsocksrr/shadowsocksr-android/releases)
 - ...
 

@@ -465,7 +465,7 @@ table tr td:first-child {
 												<p><span class="icon icon-lg text-white">filter_1</span> SSR(R) - [ SS/SSR ]：</p>
 													<p>
                                                         应用下载：
-                                                        <a class="btn-dl" href="{if $config["subscribe_client"]===true}{if $config["subscribe_client_url"]==''}/user/getPcClient{else}{$config["subscribe_client_url"]}/getClient/{$getClient}{/if}?type=ssr-win{else}/ssr-download/ssr-win.7z{/if}"><i class="material-icons icon-sm">cloud_download</i> 本站下载【高速】</a>
+                                                        <a class="btn-dl" href="{if $config["subscribe_client"]===true}{if $config["subscribe_client_url"]==''}/user/getPcClient{else}{$config["subscribe_client_url"]}/getClient/{$getClient}{/if}?type=ssr-win{else}/ssr-download/ShadowsocksR-win.zip{/if}"><i class="material-icons icon-sm">cloud_download</i> 本站下载【高速】</a>
                                                         .
                                                         <a class="btn-dl" href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases"><i class="material-icons icon-sm">cloud_download</i> 官方下载</a>
                                                     </p>
