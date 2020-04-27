@@ -32,10 +32,16 @@ table tr td:first-child {
                                 </div>
                                 <div class="nodemiddle node-flex">
                                     <div class="nodetype">
-                                        {if $user->class!=0}
-                                            <dd>VIP {$user->class}</dd>
+                                        {if $user->class==0}
+                                            <dd>倔强青铜</dd>
+                                        {else if $user->class==1}
+                                            <dd>秩序白银</dd>
+                                        {else if $user->class==2}
+                                            <dd>荣耀黄金</dd>
+                                        {else if $user->class==3}
+                                            <dd>永恒钻石</dd>
                                         {else}
-                                            <dd>普通用户</dd>
+                                            <dd>最强王者</dd>
                                         {/if}
                                     </div>
                                 </div>
