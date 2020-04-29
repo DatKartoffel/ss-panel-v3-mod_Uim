@@ -806,7 +806,7 @@ table tr td:first-child {
                                                     </p>
                                                     <p>
                                                         使用教程：
-                                                        <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Android/ClashRA-for-Windows{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
+                                                        <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Android/ClashRA{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
                                                     </p>
 													<p>
                                                         使用方式：

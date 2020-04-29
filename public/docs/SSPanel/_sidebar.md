@@ -3,7 +3,7 @@
   * [在 V2rayNG 上配置](Android/V2RayNG.md)
   * [在 Surfboard 上配置](Android/Surfboard.md)
   * [在 ShadowsocksR 上配置](Android/ShadowsocksR.md)
-  * [在 ClashRA-for-Windows 上配置](Android/ClashRA-for-Windows.md)
+  * [在 ClashRA 上配置](Android/ClashRA.md)
 
 * iOS
 
