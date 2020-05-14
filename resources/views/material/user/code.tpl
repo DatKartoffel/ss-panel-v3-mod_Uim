@@ -3,7 +3,7 @@
 <main class="content">
     <div class="content-header ui-content-header">
         <div class="container">
-            <h1 class="content-heading">充值</h1>
+            <h1 class="content-heading">捐赠</h1>
 
 
         </div>
@@ -18,7 +18,7 @@
                             <div class="card-inner">
                                 <div class="card-inner">
                                     <p class="card-heading">注意!</p>
-                                    <p>充值完成后需刷新网页以查看余额，通常一分钟内到账。</p>
+                                    <p>捐赠完成后需刷新网页以查看捐赠余额，通常一分钟内到账。</p>
                                     <p>因余额不足而未能完成的自动续费，在余额足够时会自动划扣续费。</p>
                                     {if $config['enable_admin_contact'] === true}
                                         <p class="card-heading">如果没有到账请立刻联系管理员：</p>
@@ -121,7 +121,7 @@
                                                             <td>等级续期 - 等级{$code->type}</td>
                                                         {/if}
                                                         {if $code->type==-1}
-                                                            <td>充值 {$code->number} 元</td>
+                                                            <td>捐赠 {$code->number} 元</td>
                                                         {/if}
                                                         {if $code->type==10001}
                                                             <td>充值 {$code->number} GB 流量</td>

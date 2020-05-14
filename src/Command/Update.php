@@ -27,9 +27,9 @@ class Update extends Command
         // 检查并创建新增的配置项
         echo DefaultConfig::detectConfigs();
 
-        echo ('开始升级客户端...' . PHP_EOL);
-        Job::updatedownload();
-        echo ('客户端升级结束' . PHP_EOL);
+        // echo ('开始升级客户端...' . PHP_EOL);
+        // Job::updatedownload();
+        // echo ('客户端升级结束' . PHP_EOL);
 
         echo ('开始升级 QQWry...' . PHP_EOL);
         (new Tool($this->argv))->initQQWry();

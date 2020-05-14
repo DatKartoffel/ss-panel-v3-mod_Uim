@@ -82,6 +82,9 @@ $_ENV['reg_forbidden_port']        = '';                        //注册时默�
 $_ENV['mu_suffix']                 = 'microsoft.com';           //单端口多用户混淆参数后缀，可以随意修改，但请保持前后端一致
 $_ENV['mu_regex']                  = '%5m%id.%suffix';          //单端口多用户混淆参数表达式，%5m代表取用户特征 md5 的前五位，%id 代表用户id, %suffix 代表上面这个后缀。
 
+# 是否开启用户注册联系方式填写，关闭将使用邮箱作为联系方式
+$_ENV['default_imtype']            = true;
+
 #邀请链接
 $_ENV['invite_price']              = -1;                        //用户购买邀请码所需要的价格，价格小于0时视为不开放购买
 $_ENV['custom_invite_price']       = -1;                        //用户定制邀请码所需要的价格，价格小于0时视为不开放购买
@@ -245,6 +248,9 @@ $_ENV['telegram_general_terms']             = '服务条款.';                  
 $_ENV['enable_mylivechat']    = false;   //是否开启客服系统
 $_ENV['mylivechat_id']        = '';      //客服系统ID
 
+$_ENV['enable_crisp']         = false;      //是否开启客服系统
+$_ENV['crisp_id']             = '';         //客服系统ID
+
 # PushBear  基于微信模板的向关注了二维码的用户以微信方式推送消息 https://pushbear.ftqq.com/，目前仅用户推送新公告
 $_ENV['usePushBear']          = false;
 $_ENV['PushBear_sendkey']     = '';       //请填写您在PushBear获取的sendkey，请仔细检查勿粘贴错
@@ -338,15 +344,26 @@ $_ENV['tomatopay'] = [
     ],
 ];
 
+$_ENV['idtpay']=[
+    'partner'=>"", //商户号
+    'key' =>"", //商户key
+    'sign_type'=>strtoupper('MD5'),
+    'input_charset'=>strtolower('utf-8'),
+    'subjects'=>["声声乌龙",'幽兰拿铁'], //商品名称
+    'transport'=>'https' ,//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
+    'apiurl'=>'https://pay.idt.xyz/', //http开头
+    'appname'=>$_ENV['appName'],
+];
 
 //其他面板显示设置------------------------------------------------------------------------------------------
-$_ENV['old_index_DESC']       = '<p>够了，我无法忍受你的行为，现在你将成为我们中的一员</p>';	    //旧版本首页的文字讯息
+//旧版本首页的文字讯息 <p id="hitokoto">:D 获取中...</p> 启用一言API
+$_ENV['old_index_DESC']       = '<p>够了，我无法忍受你的行为，现在你将成为我们中的一员</p>';
 
 #用户文档
-$_ENV['use_this_doc']         = false;	    //使用此文档
+$_ENV['use_this_doc']         = true;	    //使用此文档
 $_ENV['enable_documents']     = false;	    //是否允许未登陆用户查看文档中心
 $_ENV['documents_name']       = $_ENV['appName'] . ' 文档中心';	    //文档中心名称
-$_ENV['remote_documents']     = true;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
+$_ENV['remote_documents']     = false;	    //是否从远程加载文档中心，否的话请执行 php xcat initdocuments
 $_ENV['documents_source']     = 'https://raw.githubusercontent.com/GeekQu/PANEL_DOC/master/SSPanel';	    //远程文档加载地址
 
 #后台商品列表 销量统计
@@ -480,7 +497,7 @@ $_ENV['sessionDriver']          = 'cookie';            //可选: cookie,redis
 $_ENV['cacheDriver']            = 'cookie';            //可选: cookie,redis
 $_ENV['tokenDriver']            = 'db';                //可选: db,redis
 
-$_ENV['enable_login_bind_ip']   = true;        //是否将登陆线程和IP绑定
+$_ENV['enable_login_bind_ip']   = false;        //是否将登陆线程和IP绑定
 $_ENV['rememberMeDuration']     = 7;           //登录时记住账号时长天数
 $_ENV['Speedtest_duration']     = 6;           //显示多长时间的测速记录
 

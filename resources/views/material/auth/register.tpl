@@ -49,6 +49,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {if $config['default_imtype'] == 'true'}
                     <div class="rowtocol">
                         <div class="auth-row">
                             <div class="form-group form-group-label dropdown">
@@ -77,6 +79,8 @@
                             </div>
                         </div>
                     </div>
+                    {/if}
+					
                     {if $config['register_mode'] == 'invite'}
                         <div class="rowtocol">
                             <div class="auth-row">
@@ -282,13 +286,17 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                         name: $$getValue('name'),
                         passwd: $$getValue('passwd'),
                         repasswd: $$getValue('repasswd'),
+                        {if $config['default_imtype'] == 'true'}
                         wechat: $$getValue('wechat'),
+                        {else}wechat: $$getValue('email'),{/if}
 
                         {if $recaptcha_sitekey != null}
                         recaptcha: grecaptcha.getResponse(),
                         {/if}
 
+                        {if $config['default_imtype'] == 'true'}
                         imtype: $$getValue('imtype'),
+                        {else}imtype: "10",{/if}
                         code{if $enable_email_verify == true},
                         emailcode: $$getValue('email_code'){/if}{if $geetest_html != null},
                         geetest_challenge: validate.geetest_challenge,
