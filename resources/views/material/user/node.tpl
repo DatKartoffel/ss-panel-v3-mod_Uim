@@ -154,17 +154,17 @@
                                             <span>{if $node['traffic_limit']>0}{$node['traffic_used']}/{$node['traffic_limit']}GB{else}{$node['traffic_used']}GB{/if}</span>
                                         </div>
 
-                                        <!-- 节点流量倍率 -->
+                                        <!-- 节点流量倍率 
                                         <div class="nodecheck node-flex">
                                             <i class="material-icons node-icon">network_check</i>
                                             <span>x{$node['traffic_rate']}</span>
-                                        </div>
+                                        </div> -->
 
-                                        <!-- 节点速率 -->
+                                        <!-- 节点速率
                                         <div class="nodeband node-flex">
                                             <i class="material-icons node-icon">flash_on</i>
                                             <span>{if {$node['bandwidth']}==0}N/A{else}{$node['bandwidth']}{/if}</span>
-                                        </div>
+                                        </div> -->
 
                                     </div>
                                 </div>
@@ -291,23 +291,30 @@
                                                             <i class="icon icon-lg">flight_takeoff</i></span>
                                                         <strong><b><span
                                                                         class="node-alive">{if $node['online_user'] == -1}N/A{else}{$node['online_user']}{/if}</span></b></strong>
-                                                        | <span class="node-icon">
+                                                        <!-- 
+														|
+														<span class="node-icon">
                                                             <i class="icon icon-lg">cloud</i></span>
                                                         <span class="node-load">负载：{if $node['latest_load'] == -1}N/A{else}{$node['latest_load']}%{/if}</span>
                                                         | <span class="node-icon">
                                                             <i class="icon icon-lg">import_export</i></span>
                                                         <span class="node-mothed">{$node['bandwidth']}</span>
+														 -->
+														
                                                         | <span class="node-icon"><i class="icon icon-lg">equalizer</i></span>
                                                         {if $node['traffic_limit']>0}
-                                                            <span class="node-band">{$node['traffic_used']}/{$node['traffic_limit']}</span>
+                                                            <span class="node-band">{$node['traffic_used']}/{$node['traffic_limit']} 已用</span>
                                                         {else}
-                                                            {$node['traffic_used']}GB
+                                                            {$node['traffic_used']}GB 已用
                                                         {/if}
-                                                        | <span class="node-icon">
+														
+                                                        <!--
+														| <span class="node-icon">
                                                             <i class="icon icon-lg">network_check</i></span>
                                                         <span class="node-tr">{$node['traffic_rate']} 倍率</span>
                                                         | <span class="node-icon"><i class="icon icon-lg">notifications_none</i></span>
                                                         <span class="node-status">{$node['status']}</span>
+														 -->
                                                     </div>
                                                 </div>
                                             </div>
